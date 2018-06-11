@@ -1,11 +1,11 @@
 import { Component, Prop } from '@stencil/core';
 
 @Component({
-  tag: 'my-component',
-  styleUrl: 'my-component.css',
+  tag: 'my-plugin-nr-three',
+  styleUrl: 'my-plugin-nr-three.css',
   shadow: true
 })
-export class MyComponent {
+export class MyPluginNrThree {
 
   @Prop() first: string;
   @Prop() last: string;

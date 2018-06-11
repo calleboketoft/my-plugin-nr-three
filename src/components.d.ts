@@ -13,9 +13,12 @@ declare global {
   }
   namespace JSXElements {}
 
+  interface HTMLElement {
+    componentOnReady?: () => Promise<this | null>;
+  }
+
   interface HTMLStencilElement extends HTMLElement {
     componentOnReady(): Promise<this>;
-    componentOnReady(done: (ele?: this) => void): void;
 
     forceUpdate(): void;
   }
@@ -27,31 +30,31 @@ declare global {
 declare global {
 
   namespace StencilComponents {
-    interface MyComponent {
+    interface MyPluginNrThree {
       'first': string;
       'last': string;
     }
   }
 
-  interface HTMLMyComponentElement extends StencilComponents.MyComponent, HTMLStencilElement {}
+  interface HTMLMyPluginNrThreeElement extends StencilComponents.MyPluginNrThree, HTMLStencilElement {}
 
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  var HTMLMyPluginNrThreeElement: {
+    prototype: HTMLMyPluginNrThreeElement;
+    new (): HTMLMyPluginNrThreeElement;
   };
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'my-plugin-nr-three': HTMLMyPluginNrThreeElement;
   }
   interface ElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'my-plugin-nr-three': HTMLMyPluginNrThreeElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      'my-component': JSXElements.MyComponentAttributes;
+      'my-plugin-nr-three': JSXElements.MyPluginNrThreeAttributes;
     }
   }
   namespace JSXElements {
-    export interface MyComponentAttributes extends HTMLAttributes {
+    export interface MyPluginNrThreeAttributes extends HTMLAttributes {
       'first'?: string;
       'last'?: string;
     }

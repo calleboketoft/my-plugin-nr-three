@@ -1,5 +1,5 @@
 {
-  "name": "my-component",
+  "name": "my-plugin-nr-three",
   "version": "0.0.1",
   "description": "Stencil Component Starter",
   "module": "dist/esm/index.js",
@@ -10,10 +10,12 @@
     "dist/"
   ],
   "scripts": {
+    "build:dev": "stencil build --dev",
+    "build:watch": "stencil build --dev --watch",
+    "start": "npm run build:watch",
     "build": "stencil build",
     "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
     "serve": "stencil-dev-server",
-    "start": "npm run dev",
     "test": "jest",
     "test.watch": "jest --watch"
   },
@@ -21,7 +23,7 @@
     "plugin-comm": "github:calleboketoft/plugin-comm"
   },
   "devDependencies": {
-    "@stencil/core": "^0.9.1",
+    "@stencil/core": "^0.9.7",
     "@stencil/dev-server": "latest",
     "@stencil/utils": "latest",
     "@types/jest": "^21.1.1",
